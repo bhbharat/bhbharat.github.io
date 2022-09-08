@@ -10,7 +10,7 @@ folder: mydoc
 ---
 
 [Course Link](https://learning.oreilly.com/library/view/advanced-deep-learning/9781838821654/Text/Preface.xhtml) |
-[Edit page here](https://github.com/bhbharat/bhbharat.github.io/edit/master/_posts/2022-01-01-book-Advanced-Deep_Learning.md) |
+[Edit page here](https://github.com/bhbharat/bhbharat.github.io/edit/gh-pages/pages/mydoc/book-Advanced-Deep_Learning.md) |
 [Upload Image](https://github.com/bhbharat/bhbharat.github.io/upload/master/images)  (Ref Images - ../images/image_name.png)
 
 
