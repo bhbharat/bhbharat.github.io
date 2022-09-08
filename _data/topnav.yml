@@ -5,8 +5,12 @@ topnav:
   items:
     - title: GitHub
       external_url: https://github.com/bhbharat/bhbharat.github.io
-    - title: Code Snippets
+    - title: Snippets
       url: /index.html
+    - title: Edit Sidebar
+      external_url: https://github.com/bhbharat/bhbharat.github.io/blob/gh-pages/_data/sidebars/mydoc_sidebar.yml
+    - title: Edit Topmenu
+      external_url: https://github.com/bhbharat/bhbharat.github.io/edit/gh-pages/_data/topnav.yml
 
 #Topnav dropdowns
 topnav_dropdowns:
