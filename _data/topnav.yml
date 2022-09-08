@@ -6,7 +6,7 @@ topnav:
     - title: GitHub
       external_url: https://github.com/bhbharat/bhbharat.github.io
     - title: Code Snippets
-      url: /blogs
+      url: /index.html
 
 #Topnav dropdowns
 topnav_dropdowns:
