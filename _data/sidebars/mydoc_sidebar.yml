@@ -73,3 +73,11 @@ entries:
     - title: Advanced Deep Learning
       url: /advanceddeeplearning.html
       output: web, pdf
+      
+  - title: Streamlit Tools
+    output: web, pdf
+    folderitems:
+
+    - title: NLP Tool
+      external_url: https://bhbharat-streamlit-tool-tools-c0jstg.streamlitapp.com/
+      output: web, pdf
