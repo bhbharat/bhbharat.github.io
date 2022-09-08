@@ -10,8 +10,6 @@ folder: mydoc
 ---
 
 
-[Add Snippets](https://github.com/bhbharat/bhbharat.github.io/edit/master/snippets.md)
-
 ## Create virtual environment and install basic packages
 
 ```python
