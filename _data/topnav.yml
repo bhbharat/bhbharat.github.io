@@ -7,10 +7,7 @@ topnav:
       external_url: https://github.com/bhbharat/bhbharat.github.io
     - title: Snippets
       url: /index.html
-    - title: Edit Sidebar
-      external_url: https://github.com/bhbharat/bhbharat.github.io/blob/gh-pages/_data/sidebars/mydoc_sidebar.yml
-    - title: Edit Topmenu
-      external_url: https://github.com/bhbharat/bhbharat.github.io/edit/gh-pages/_data/topnav.yml
+
 
 #Topnav dropdowns
 topnav_dropdowns:
@@ -27,5 +24,11 @@ topnav_dropdowns:
         - title: StackEdit
           external_url: https://stackedit.io/app#
 
-
+topnav:
+- title: Topnav
+  items:
+    - title: Edit Sidebar
+      external_url: https://github.com/bhbharat/bhbharat.github.io/edit/gh-pages/_data/sidebars/mydoc_sidebar.yml
+    - title: Edit Topmenu
+      external_url: https://github.com/bhbharat/bhbharat.github.io/edit/gh-pages/_data/topnav.yml
 # Copyright 2021 Google LLC
