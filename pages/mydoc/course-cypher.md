@@ -15,8 +15,7 @@ folder: mydoc
 [link to lab](https://neo4j.com/labs/) |
 [Video Link](https://www.youtube.com/watch?v=h7mq1mrQIBQ) |
 [Apoc video link](https://www.youtube.com/playlist?list=PL9Hl4pk2FsvXEww23lDX_owoKoqqBQpdq) |
-[Edit page here](https://github.com/bhbharat/bhbharat.github.io/edit/master/_posts/2022-06-02-course-cypher.md) |
-[Upload Image](https://github.com/bhbharat/bhbharat.github.io/upload/master/images)  (Ref Images - ../images/image_name.png)
+[Edit page here](https://github.com/bhbharat/bhbharat.github.io/edit/gh-pages/pages/mydoc/course-cypher.md) |
 
 **Neo4j location :** C:\Users\if441f\2022_Projects\DSRM\neo4j-community-4.4.7
 
