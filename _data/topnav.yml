@@ -4,9 +4,9 @@ topnav:
 - title: Topnav
   items:
     - title: GitHub
-      external_url: https://github.com/tomjoht/documentation-theme-jekyll
-    - title: Blogs
-      url: /news
+      external_url: https://github.com/bhbharat/bhbharat.github.io
+    - title: Code Snippets
+      url: /blogs
 
 #Topnav dropdowns
 topnav_dropdowns:
