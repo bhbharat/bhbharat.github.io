@@ -3,17 +3,17 @@ title: HuggingFace
 tags: 
 keywords: rouge, pygments, prettify, color coding,
 last_updated: Sept 5, 2022
-summary: ""
+summary: "Huggingface course from huggingface website."
 sidebar: mydoc_sidebar
 permalink: huggingface.html
 folder: mydoc
 ---
 
-[Course Link](https://huggingface.co/course/chapter1/1) |
+[Course Link](https://huggingface.co/course/chapter1/1) 
 [Modelhub Link](https://huggingface.co/models)
-
-[Edit here](https://github.com/bhbharat/bhbharat.github.io/edit/gh-pages/pages/mydoc/course-huggingface.md) |
+[Edit here](https://github.com/bhbharat/bhbharat.github.io/edit/gh-pages/pages/mydoc/course-huggingface.md) 
 [Hackathon](https://datahack.analyticsvidhya.com/contest/linguipedia-codefest-natural-language-processing-1/#ProblemStatement)
+
 
 
 Some of the pipelines available in the Huggingface are:
@@ -42,33 +42,33 @@ All the Transformer models mentioned above (GPT, BERT, BART, T5, etc.) have been
 
 ![](https://raw.githubusercontent.com/bhbharat/bhbharat.github.io/master/images/transformers.PNG)
 
-### There are 2 types of language modellings:
+## There are 2 types of language modellings:
 
 1. **Casual language modelling** - predict the next word in the sentence in supervised manner
 2. **Masked language modelling** - predict the masked word in the sentence
 
-### The model is primarily composed of two blocks:
+## The model is primarily composed of two blocks:
 
 1. **Encoder (left)**: The encoder receives an input and builds a representation of it (its features). This means that the model is optimized to acquire understanding from the input.
 2. **Decoder (right):** The decoder uses the encoder’s representation (features) along with other inputs to generate a target sequence. This means that the model is optimized for generating outputs.
     
-### Each of these parts can be used independently, depending on the task:
+## Each of these parts can be used independently, depending on the task:
 
 1. **Encoder-only models:** Good for tasks that require understanding of the input, such as sentence classification and named entity recognition. eg. *BERT*
 2. **Decoder-only models:** Good for generative tasks such as text generation. eg. *GPT-2*
 3. **Encoder-decoder models or sequence-to-sequence models:** Good for generative tasks that require an input, such as translation or summarization. eg. *T5, BART*
 
 
-### Attention Layer
+## Attention Layer
 
  A key feature of Transformer models is that they are built with special layers called attention layers. this layer will tell the model to pay specific attention to certain words in the sentence you passed it (and more or less ignore the others) when dealing with the representation of each word. **So the word vector not only represents word in question but other related words as well.**
 
-### Transformer architecture
+## Transformer architecture
 
  The Transformer architecture was originally designed for translation. **The encoder takes the complete sentence but decoder takes only the words before the word to be predicted.** the first attention layer in a decoder block pays attention to all (past) inputs to the decoder, but the second attention layer uses the output of the encoder. eg. BERT is an architecture while bert-base-cased, a set of weights trained by the Google team for the first release of BERT, is a checkpoint.
 
 
-### Encoder models:
+## Encoder models:
 
 Encoder models use only the encoder of a Transformer model. At each stage, the attention layers can access all the words in the initial sentence (bi-directional). The pre-training of these models is done by masking random words and tasking the model with reconstructing the initial sentence.
 
@@ -87,7 +87,7 @@ Representatives of this family of models include:
  - RoBERTa
  - List item
 
-### Decoder models:
+## Decoder models:
 
 Decoder models use only the decoder of a Transformer model. At each stage, for a given word the attention layers can only access the words positioned before it in the sentence (uni-directional). The pretraining of decoder models usually revolves around predicting the next word in the sentence. These models are best suited for tasks involving text generation.
 
@@ -98,7 +98,7 @@ Representatives of this family of models include:
  3. GPT-2 
  4. Transformer XL
 
-### Encoder-decoder models
+## Encoder-decoder models
 
 Encoder-decoder models (also called sequence-to-sequence models) use both parts of the Transformer architecture. At each stage, the attention layers of the encoder can access all the words in the initial sentence, whereas the attention layers of the decoder can only access the words positioned before a given word in the input.
 
@@ -116,7 +116,7 @@ Representatives of this family of models include:
  - Marian 
  - T5
 
-### Summary
+## Summary
 
 | Model           | Examples                                   | Tasks                                                                            |
 | --------------- | ------------------------------------------ | -------------------------------------------------------------------------------- |
@@ -126,7 +126,7 @@ Representatives of this family of models include:
 
 
 
-### Under the pipeline
+## Under the pipeline
 
 we first need to download that information from the Model Hub. To do this, we use the AutoTokenizer class and its `from_pretrained()` method. Using the checkpoint name of our model, it will automatically fetch the data associated with the model’s tokenizer and cache it.
 
@@ -178,7 +178,7 @@ predictions = torch.nn.functional.softmax(outputs.logits, dim=-1)
 print(predictions)
 model.config.id2label
 ```
-### Creating a Transformer
+## Creating a Transformer
 
 We can load the model architecture (without loading the pretrained checkpoints) by loading model and the config file as shown below:
 
@@ -206,7 +206,7 @@ There are 3 types of tokenizers that are used:
 
 There are many other methods that are getting used like Byte-level BPE used in GPT-2, WordPiece used in BERT etc.
 
-### loading of tokenizers:
+## loading of tokenizers:
 
 ```python
 from transformers import BertTokenizer
@@ -221,7 +221,7 @@ decoded_string = tokenizer.decode([7993, 170, 11303, 1200, 2443, 1110, 3014])
 
 the tokenizer has a _vocabulary_, which is the part we download when we instantiate it with the `from_pretrained()` method. The tokenizer adds the special word `[CLS]` at the beginning and the special word `[SEP]` at the end. This is because the model is pretrained with those, so to get the same results for inference we need to add them as well.
 
-### Attention masks
+## Attention masks
 
 The key feature of Transformer models is attention layers that _contextualize_ each token. These will take into account the padding tokens since they attend to all of the tokens of a sequence. To get the same result when passing individual sentences of different lengths through the model, we need to tell those attention layers to ignore the padding tokens. _Attention masks_ are tensors with the exact same shape as the input IDs tensor, filled with 0s and 1s: 1s indicate the corresponding tokens should be attended to, and 0s indicate the corresponding tokens should not be attended to.
 
@@ -265,7 +265,7 @@ from transformers import DataCollatorWithPadding
 data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
 batch = data_collator(samples)
 ```
-### Trainer API
+## Trainer API
 
 🤗 Transformers provides a `Trainer` class to help you fine-tune any of the pretrained models it provides on your dataset. 1. The first step before we can define our `Trainer` is to define a `TrainingArguments` class that will contain all the hyperparameters the `Trainer` will use for training and evaluation. 
 2. The second step is to define our model. 
@@ -302,7 +302,7 @@ import numpy as np
 preds = np.argmax(predictions.predictions, axis=-1)
 ```
 
-### Datasets
+## Datasets
 
 Huggingface datasets library provides an easy way to load the data and use it for the models. 
 
