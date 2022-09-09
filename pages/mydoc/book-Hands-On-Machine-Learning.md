@@ -10,8 +10,6 @@ folder: mydoc
 ---
 
 [Course Link](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781098125967/preface01.html) |
-[Edit page here](https://github.com/bhbharat/bhbharat.github.io/edit/gh-pages/pages/mydoc/book-Hands-On-Machine-Learning.md) |
-[Upload Image](https://github.com/bhbharat/bhbharat.github.io/upload/master/images)  (Ref Images - ../images/image_name.png)
-
+[Edit page here](https://github.com/bhbharat/bhbharat.github.io/edit/gh-pages/pages/mydoc/book-Hands-On-Machine-Learning.md)
 
 
