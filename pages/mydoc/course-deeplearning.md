@@ -10,7 +10,7 @@ folder: mydoc
 ---
 
 [Course Link](https://www.deeplearning.ai/programs/) |
-[Edit page here](https://github.com/bhbharat/bhbharat.github.io/edit/gh-pages/pages/mydoc/course-deeplearning.md) |
+[Edit page here](https://github.com/bhbharat/bhbharat.github.io/edit/gh-pages/pages/mydoc/course-deeplearning.md)
 
 
 
