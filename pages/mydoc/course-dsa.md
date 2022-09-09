@@ -10,7 +10,7 @@ folder: mydoc
 ---
 
 
-[video course](https://learning.oreilly.com/videos/learning-data-structures/9781771373470/9781771373470-video210110/) |
-[Book](file:///C:/Users/if441f/2022_Projects/Learning/Introduction_to_Algorithms_Third_Edition_(2009).pdf) |
-[Edit here](https://github.com/bhbharat/bhbharat.github.io/edit/gh-pages/pages/mydoc/course-dsa.md) |
+[video course](https://learning.oreilly.com/videos/learning-data-structures/9781771373470/9781771373470-video210110/) | 
+[Book](file:///C:/Users/if441f/2022_Projects/Learning/Introduction_to_Algorithms_Third_Edition_(2009).pdf) | 
+[Edit here](https://github.com/bhbharat/bhbharat.github.io/edit/gh-pages/pages/mydoc/course-dsa.md)
 
