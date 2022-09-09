@@ -13,7 +13,7 @@ folder: mydoc
 
 ## Create virtual environment and install basic packages
 
-```python
+```bash
 
 conda create -n myenv python=3.9.6
 conda config --append channels conda-forge
