@@ -10,8 +10,6 @@ folder: mydoc
 ---
 
 [Course Link](https://learning.oreilly.com/library/view/practical-natural-language/9781492054047/ch03.html) |
-[Edit page here](https://github.com/bhbharat/bhbharat.github.io/edit/gh-pages/pages/mydoc/book-Practical-NLP.md) |
-[Upload Image](https://github.com/bhbharat/bhbharat.github.io/upload/master/images)  (Ref Images - ../images/image_name.png)
-
+[Edit page here](https://github.com/bhbharat/bhbharat.github.io/edit/gh-pages/pages/mydoc/book-Practical-NLP.md)
 
 
