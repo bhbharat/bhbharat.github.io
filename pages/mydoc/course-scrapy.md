@@ -11,7 +11,7 @@ folder: mydoc
 
 
 [video course](https://learning.oreilly.com/videos/data-scraping-and/9781801818483/9781801818483-video4_19/) |
-[Edit here](https://github.com/bhbharat/bhbharat.github.io/edit/gh-pages/pages/mydoc/course-scrapy.md) |
+[Edit here](https://github.com/bhbharat/bhbharat.github.io/edit/gh-pages/pages/mydoc/course-scrapy.md)
 
 
 ## BeautifulSoup
