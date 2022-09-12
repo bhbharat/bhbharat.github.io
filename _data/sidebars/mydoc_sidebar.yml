@@ -54,6 +54,10 @@ entries:
       url: /huggingface.html
       output: web, pdf
 
+    - title: OpenCV
+      url: /opencv.html
+      output: web, pdf
+      
     - title: Deeplearning.ai
       url: /deeplearning.html
       output: web, pdf
