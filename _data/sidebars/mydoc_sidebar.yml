@@ -86,14 +86,14 @@ entries:
       external_url: https://dashboard.heroku.com/apps
       output: web, pdf
       
-    - title: Wordcloud Tool
+    - title: Plot wordcloud
       external_url: https://streamlit-wordcloud.herokuapp.com/
       output: web, pdf
 
-    - title: Twitter Tool
+    - title: Twitter downloader
       external_url: https://streamlit-tweets.herokuapp.com/
       output: web, pdf
       
-    - title: Phrases Tool
+    - title: Phrases extraction
       external_url: https://streamlit-phrases.herokuapp.com/
       output: web, pdf
