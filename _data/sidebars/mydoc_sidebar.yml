@@ -93,3 +93,7 @@ entries:
     - title: Tweeter Tool
       external_url: https://streamlit-tweets.herokuapp.com/
       output: web, pdf
+      
+    - title: Phrases Tool
+      external_url: https://streamlit-phrases.herokuapp.com/
+      output: web, pdf
