@@ -82,8 +82,8 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: NLP Tool
-      external_url: https://bhbharat-streamlit-tool-tools-c0jstg.streamlitapp.com/
+    - title: Heroku Apps
+      external_url: https://dashboard.heroku.com/apps
       output: web, pdf
       
     - title: Wordcloud Tool
