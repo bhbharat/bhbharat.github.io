@@ -85,3 +85,7 @@ entries:
     - title: NLP Tool
       external_url: https://bhbharat-streamlit-tool-tools-c0jstg.streamlitapp.com/
       output: web, pdf
+      
+    - title: Wordcloud Tool
+      external_url: https://streamlit-wordcloud.herokuapp.com/
+      output: web, pdf
