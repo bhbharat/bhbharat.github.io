@@ -90,7 +90,7 @@ entries:
       external_url: https://streamlit-wordcloud.herokuapp.com/
       output: web, pdf
 
-    - title: Tweeter Tool
+    - title: Twitter Tool
       external_url: https://streamlit-tweets.herokuapp.com/
       output: web, pdf
       
