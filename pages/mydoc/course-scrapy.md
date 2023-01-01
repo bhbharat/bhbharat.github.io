@@ -41,7 +41,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import time
 
-def get_driver(self,download_dir='downloads'):
+def get_driver(download_dir='downloads'):
     options = Options()
     options.add_argument("--mute-audio")
     options.add_argument('--no-sandbox')
@@ -49,9 +49,10 @@ def get_driver(self,download_dir='downloads'):
     options.add_argument("--incognito")
     options.add_argument("--window-size=900,500")
     options.add_experimental_option("prefs",{"download.default_directory" : f"{os.getcwd()+'/'+download_dir+'/'}"})
-    self.driver = webdriver.Chrome(options=options, executable_path=self.chromedriver_path)
+    driver = webdriver.Chrome(options=options, executable_path=chromedriver_path)
+    return driver
 
-def download_wait(self,path_to_downloads):
+def download_wait(path_to_downloads):
     seconds = 0
     dl_wait = True
     while dl_wait and seconds < 600:
@@ -78,6 +79,14 @@ select=Select(self.driver.find_element(By.CSS_SELECTOR,'#sprachwahl'))
 select.select_by_visible_text("US English / Matthew")
 
 driver.quit()
+
+### Colab
+!pip install selenium
+!sudo apt install chromium-chromedriver
+!cp /usr/lib/chromium-browser/chromedriver /usr/bin
+chromedriver_path='/usr/bin/chromedriver'
+options.add_argument('--headless')
+
 
 ```
 
