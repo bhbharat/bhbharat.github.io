@@ -36,27 +36,49 @@ tag.select("div p") # use css selector
 ```python
 
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import time
-driver=webdriver.Edge(executable_path=r"C:\Users\if441f\selenium_drivers\msedgedriver.exe")
+
+def get_driver(self,download_dir='downloads'):
+    options = Options()
+    options.add_argument("--mute-audio")
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    options.add_argument("--incognito")
+    options.add_argument("--window-size=900,500")
+    options.add_experimental_option("prefs",{"download.default_directory" : f"{os.getcwd()+'/'+download_dir+'/'}"})
+    self.driver = webdriver.Chrome(options=options, executable_path=self.chromedriver_path)
+
+def download_wait(self,path_to_downloads):
+    seconds = 0
+    dl_wait = True
+    while dl_wait and seconds < 600:
+        time.sleep(1)
+        dl_wait = False
+        for fname in os.listdir(path_to_downloads):
+            if fname.endswith('.crdownload'):
+                dl_wait = True
+        seconds += 1
+    return seconds
+        
+        
+driver=get_driver()
 driver.get("www.google.com")
 time.sleep(5)
+
 driver.find_element(By.CSS_SELECTOR, "#formAID" ).click()
-time.sleep(5)
+
 email=driver.find_element(By.CSS_SELECTOR,"#mat-input-0")
 email.send_keys('mebharat123@gmail.com')
-driver.find_element(By.CSS_SELECTOR,".mat-raised-button").click()
+
+from selenium.webdriver.support.ui import Select
+select=Select(self.driver.find_element(By.CSS_SELECTOR,'#sprachwahl'))
+select.select_by_visible_text("US English / Matthew")
+
 driver.quit()
 
-```
-
-## Selenium appliation
-
-```python
-CALL C:/ProgramData/Anaconda3/Scripts/activate 
-CALL conda activate onto
-python C:\Users\if441f\2022_Projects\Learning\automate\booking\booking.py runserver
 ```
 
 
