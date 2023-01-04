@@ -42,7 +42,7 @@ bin\neo4j restart
 > B. APOC - copy apoc jar file from labs folder to plugin folder. Add following lin in the neo4j.conf file :
   dbms.security.procedures.unrestricted=algo.*,apoc.*
 
-## Using py2neo
+## Using py2neo and useful commands
 
 ```python
 from py2neo import Graph
