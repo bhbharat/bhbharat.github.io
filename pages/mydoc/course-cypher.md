@@ -39,7 +39,7 @@ bin\neo4j restart
 2. Add Neo4j plugins:
 > A. Neosemantics - download jar file from [here](https://github.com/neo4j-labs/neosemantics/releases) and add to plugins directory ([README](https://github.com/neo4j-labs/neosemantics/blob/4.0/README.md)). Then restart the neo4j.
 > 
-> B. APOC - copy apoc jar file from labs folder to plugin folder. Add following lin in the neo4j.conf file :
+> B. APOC - copy apoc jar file from labs folder to plugin folder. Add following line in the neo4j.conf file :
   dbms.security.procedures.unrestricted=algo.*,apoc.*
 
 ## Using py2neo and useful commands
