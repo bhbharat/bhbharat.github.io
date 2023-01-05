@@ -61,7 +61,7 @@ graph.run("MATCH (n)<-[r]-(n1) RETURN n,r,n1 LIMIT 10").data() ## load data
 
 
 
-## Cypher language
+## Cypher language (https://neo4j.com/docs/cypher-cheat-sheet/current/)
 
 ```
 match (n) return n 
