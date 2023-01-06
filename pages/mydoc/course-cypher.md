@@ -57,6 +57,20 @@ graph.run("CALL n10s.rdf.import.fetch('file:///C:/Users/if441f/2022_Projects/DSR
 
 graph.run("MATCH (n)<-[r]-(n1) RETURN n,r,n1 LIMIT 10").data() ## load data
 
+graph.run("CALL db.schema.visualization()").data()
+
+graph.run("call db.relationshipTypes() ")
+
+graph.run("call CALL db.labels()")
+
+graph.run("MATCH p=shortestPath((n:Part)-[*..3]->(n1:PartLocation))
+WHERE 
+n.basepartname="structure"
+// n.basepartname =~ ".*structure.*" 
+// AND n1.basepartname=~ ".*" 
+// AND type(r)="Contains"
+RETURN p")
+
 ```
 
 
