@@ -1,0 +1,105 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage.html
+      output: pdf
+      type: frontmatter
+
+  - title: Blogs
+    output: web, pdf
+    folderitems:
+
+    - title: Neo4j_1
+      url: /Neo4j_1.html
+      output: web, pdf
+      type: homepage
+
+    - title: Neo4j_2
+      url: /Neo4j_2.html
+      output: web, pdf
+      type: homepage
+      
+    - title: Github Jupyter
+      url: /githubrepo.html
+      output: web, pdf
+      type: homepage
+
+    - title: Jupyter on Kaggle
+      url: /jupyter_kaggle.html
+      output: web, pdf
+
+    - title: Add Snnippet to Jupyter
+      url: /addsnippets.html
+      output: web, pdf
+
+  - title: Courses
+    output: web, pdf
+    folderitems:
+
+    - title: Web Scraping
+      url: /coursescrapy.html
+      output: web, pdf
+
+    - title: DSA
+      url: /dsa.html
+      output: web, pdf
+
+    - title: HuggingFace
+      url: /huggingface.html
+      output: web, pdf
+
+    - title: OpenCV
+      url: /opencv.html
+      output: web, pdf
+      
+    - title: Deeplearning.ai
+      url: /deeplearning.html
+      output: web, pdf
+
+  - title: Books
+    output: web, pdf
+    folderitems:
+
+    - title: Practical NLP
+      url: /practicalnlp.html
+      output: web, pdf
+
+    - title: Hands On ML
+      url: /handsonmachinelearning.html
+      output: web, pdf
+
+    - title: Advanced Deep Learning
+      url: /advanceddeeplearning.html
+      output: web, pdf
+      
+  - title: Streamlit Tools
+    output: web, pdf
+    folderitems:
+
+    - title: Heroku Apps
+      external_url: https://dashboard.heroku.com/apps
+      output: web, pdf
+      
+    - title: Plot wordcloud
+      external_url: https://streamlit-wordcloud.herokuapp.com/
+      output: web, pdf
+
+    - title: Twitter downloader
+      external_url: https://streamlit-tweets.herokuapp.com/
+      output: web, pdf
+      
+    - title: Phrases extraction
+      external_url: https://streamlit-phrases.herokuapp.com/
+      output: web, pdf

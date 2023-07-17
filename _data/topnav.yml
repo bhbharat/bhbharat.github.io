@@ -1,0 +1,29 @@
+## Topnav single links
+## if you want to list an external url, use external_url instead of url. the theme will apply a different link base.
+topnav:
+- title: Topnav
+  items:
+    - title: GitHub
+      external_url: https://github.com/bhbharat/bhbharat.github.io
+    - title: Edit Sidebar
+      external_url: https://github.com/bhbharat/bhbharat.github.io/edit/gh-pages/_data/sidebars/mydoc_sidebar.yml
+    - title: Edit Topmenu
+      external_url: https://github.com/bhbharat/bhbharat.github.io/edit/gh-pages/_data/topnav.yml
+
+
+#Topnav dropdowns
+topnav_dropdowns:
+- title: Topnav dropdowns
+  folders:
+    - title: Links
+      folderitems:
+        - title: Analytics Vidya
+          external_url: https://www.analyticsvidhya.com/blog/
+        - title: Paper with Code
+          external_url: https://paperswithcode.com/sota
+        - title: Paraphrasing
+          external_url: https://quillbot.com/
+        - title: StackEdit
+          external_url: https://stackedit.io/app#
+
+
