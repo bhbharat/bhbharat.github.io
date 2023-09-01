@@ -19,6 +19,7 @@ bin\neo4j-admin load --from=import\NER.dump --database=neo4j
 ```
 
 ```python
+
 def run_queries(graph,query):
     for i in query.split(';'):
         graph.run(i)
@@ -40,22 +41,6 @@ def import_graphml(output_file,graph,delete=True):
     remove r.label
     """)
 
-def run_apoc_query(graph,query,**kwargs):
-    args=[f"{i}: ${i}" for i in kwargs.keys()]
-    q=f"""
-    CALL apoc.periodic.iterate(
-    "
-    unwind $data as row return row
-    ",
-    "
-    {query}
-
-    ",{{batchSize: 500, parallel: false, params:{ '{'+', '.join(args) +'}'} }}) 
-    YIELD batch, total, timeTaken  
-    RETURN batch, total, timeTaken  
-    """
-    return graph.run(q,**kwargs)
-
 def save_graphml(output_file,graph):
     graph.run(f"""   
         call apoc.export.graphml.all('file:///C:/Users/if441f/2022_Projects/NCR/{output_file}',{{}})
@@ -75,10 +60,10 @@ def drop_constraints(graph,columns):
         except:
             pass
 
-
 ```
 
 ```cypher
+
 // Periodic Iterate
 call apoc.periodic.iterate(  
     "load csv with headers from 'file:///C:/Users/if441f/2022_Projects/NCR/input/cleaned_files/cd_page_web_columns.csv' as row
@@ -92,7 +77,6 @@ return row",
 
 // see meta data
 call apoc.meta.graph()
-
 
 ```
 
