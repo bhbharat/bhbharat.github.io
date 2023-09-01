@@ -8,7 +8,7 @@ sidebar: mydoc_sidebar
 permalink: Neo4j_1.html
 folder: mydoc
 ---
-[Edit here: ](https://github.com/bhbharat/bhbharat.github.io/edit/gh-pages/pages/mydoc/blog-cypherfav.md) |
+[Edit here: ](https://github.com/bhbharat/bhbharat.github.io/edit/main/pages/mydoc/blog-Neo4j_1.md) |
 [Cypher refcard](https://github.com/bhbharat/bhbharat.github.io/blob/gh-pages/neo4j-cypher-refcard-stable.pdf) |
 [Neo4j videos](https://neo4j.com/video/bite-sized-neo4j-for-data-scientists/)
 
