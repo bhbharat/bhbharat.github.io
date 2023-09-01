@@ -8,7 +8,6 @@ sidebar: mydoc_sidebar
 permalink: Neo4j_1.html
 folder: mydoc
 ---
-
 [Edit here: ](https://github.com/bhbharat/bhbharat.github.io/edit/gh-pages/pages/mydoc/blog-cypherfav.md) |
 [Cypher refcard](https://github.com/bhbharat/bhbharat.github.io/blob/gh-pages/neo4j-cypher-refcard-stable.pdf) |
 [Neo4j videos](https://neo4j.com/video/bite-sized-neo4j-for-data-scientists/)
@@ -18,6 +17,67 @@ bin\neo4j console
 bin\neo4j-admin dump --to=import\NER.dump --database=neo4j
 bin\neo4j-admin load --from=import\NER.dump --database=neo4j
 ```
+
+```python
+def run_queries(graph,query):
+    for i in query.split(';'):
+        graph.run(i)
+def import_graphml(output_file,graph,delete=True):
+    if delete:
+        graph.delete_all()
+    graph.run(f"""  
+    call apoc.import.graphml('file:///C:/Users/if441f/2022_Projects/NCR/{output_file}',{{}})
+    """)
+    graph.run("""
+    match (n)
+    call apoc.create.addLabels(id(n),[split(n.labels,":")[1]]) 
+    yield node
+    remove n.labels
+    return node
+    """)
+    graph.run("""
+    match (n)-[r]->(n1)
+    remove r.label
+    """)
+
+def run_apoc_query(graph,query,**kwargs):
+    args=[f"{i}: ${i}" for i in kwargs.keys()]
+    q=f"""
+    CALL apoc.periodic.iterate(
+    "
+    unwind $data as row return row
+    ",
+    "
+    {query}
+
+    ",{{batchSize: 500, parallel: false, params:{ '{'+', '.join(args) +'}'} }}) 
+    YIELD batch, total, timeTaken  
+    RETURN batch, total, timeTaken  
+    """
+    return graph.run(q,**kwargs)
+
+def save_graphml(output_file,graph):
+    graph.run(f"""   
+        call apoc.export.graphml.all('file:///C:/Users/if441f/2022_Projects/NCR/{output_file}',{{}})
+        """)
+
+def create_constraints(graph,columns):
+    for i in columns:
+        try:
+            graph.run(f"CREATE CONSTRAINT ON (n:{i}) ASSERT n.name IS UNIQUE")
+        except:
+            pass
+  
+def drop_constraints(graph,columns):
+    for i in columns:
+        try:
+            graph.run(f"DROP CONSTRAINT ON (n:{i}) ASSERT n.name IS UNIQUE")
+        except:
+            pass
+
+
+```
+
 
 ```cypher
 
