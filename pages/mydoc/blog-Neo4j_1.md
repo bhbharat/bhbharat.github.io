@@ -78,6 +78,23 @@ def drop_constraints(graph,columns):
 
 ```
 
+```cypher
+// Periodic Iterate
+call apoc.periodic.iterate(  
+    "load csv with headers from 'file:///C:/Users/if441f/2022_Projects/NCR/input/cleaned_files/cd_page_web_columns.csv' as row
+return row",
+" 
+    match (n:NC_KEY) where n.name=row.NC_KEY
+    merge (n1:Defect {name:row.Defect})
+    merge (n)-[:Defect]->(n1)
+",{batchSize:1000}
+) yield batches return batches
+
+// see meta data
+call apoc.meta.graph()
+
+
+```
 
 ```cypher
 
