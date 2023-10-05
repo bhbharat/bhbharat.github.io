@@ -9,7 +9,7 @@ permalink: index.html
 folder: mydoc
 ---
 
-[Edit me](https://github.com/bhbharat/bhbharat.github.io/edit/gh-pages/index.md)
+[Edit me](https://github.com/bhbharat/bhbharat.github.io/edit/main/index.md)
 
 ## Create virtual environment and install basic packages
 
