@@ -11,7 +11,7 @@ folder: mydoc
 
 [Course Link](https://huggingface.co/course/chapter1/1) |
 [Modelhub Link](https://huggingface.co/models) |
-[Edit here](https://github.com/bhbharat/bhbharat.github.io/edit/gh-pages/pages/mydoc/course-huggingface.md) |
+[Edit here](https://github.com/bhbharat/bhbharat.github.io/edit/main/pages/mydoc/course-huggingface.md) |
 [Hackathon](https://datahack.analyticsvidhya.com/contest/linguipedia-codefest-natural-language-processing-1/#ProblemStatement)
 
 
