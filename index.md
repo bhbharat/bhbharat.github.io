@@ -31,21 +31,6 @@ pip install torch torchvision torchaudio & pip install transformers
 
 ```
 
-## Docker Commands
-
-```
-docker login registry.web.boeing.com -u 3477482 -p wV6juASUr3zz2tFuy7zU
-docker images
-docker ps -a
-docker build <image> -t name .
-docker search
-docker inspect image
-docker run -dp 127.0.0.1:3000:3000 getting-started
-docker tag getting_started:v1 registry.web.boeing.com/bharat.bhushan/767_ncr
-docker push registry.web.boeing.com/bharat.bhushan/767_ncr
-
-```
-
 ## Configure Jupyter
 
 ```bash
