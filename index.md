@@ -73,6 +73,16 @@ oc get pvc
 oc set volume deployment.apps/streamlit --add -t pvc --claim-name=myclaim --mount-path=/
 oc delete imagestream,deployment,dc,svc,route,pvc -l app=streamlit
 
+Add SSL - 
+oc edit route.route.openshift.io/streamlit
+Add tls:termination: edge below host - 
+spec:
+  host: time-cpuser1-test.apps.kcstd-clt.cloud.boeing.com
+  port:
+    targetPort: 8080-tcp
+  tls:
+    termination: edge
+
 ```
 
 
