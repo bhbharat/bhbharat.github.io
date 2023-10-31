@@ -31,7 +31,7 @@ pip install torch torchvision torchaudio & pip install transformers
 
 ```
 
-### Docker commands
+## Docker commands
 
 ```
 docker login registry.web.boeing.com -u 3477482 -p git_token
@@ -51,7 +51,7 @@ docker exec -it <container_name_or_id> /bin/sh
 ```
 
 
-### openshift commands
+## openshift commands
 
 ```
 oc login --token=oc_token --server=https://api.kcs-pre-clt.k8s.boeing.com:6443
