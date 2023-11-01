@@ -41,6 +41,7 @@ docker build -t registry.web.boeing.com/bharat.bhushan/767_ncr/streamlit .
 docker search
 docker inspect image
 docker run -dp 0.0.0.0:7474:7474 registry.web.boeing.com/bharat.bhushan/767_ncr/neo4j_ncr
+docker run -dp 0.0.0.0:7474:7474 -p=0.0.0.0:7687:7687 registry.web.boeing.com/bharat.bhushan/767_ncr/neo4rat.bhushan/767_ncr/neo4j_ncr
 docker tag flask_app registry.web.boeing.com/bharat.bhushan/767_ncr/test
 docker push registry.web.boeing.com/bharat.bhushan/767_ncr/test
 docker system prune
