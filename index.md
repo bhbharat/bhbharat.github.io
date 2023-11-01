@@ -40,8 +40,7 @@ docker ps -a
 docker build -t registry.web.boeing.com/bharat.bhushan/767_ncr/streamlit .
 docker search
 docker inspect image
-docker run -dp 127.0.0.1:3000:3000 getting-started
-docker run -d -p 8000:8000 --name flask-app --rm sres.web.boeing.com:5000/3477482/flask-app
+docker run -dp 0.0.0.0:7474:7474 registry.web.boeing.com/bharat.bhushan/767_ncr/neo4j_ncr
 docker tag flask_app registry.web.boeing.com/bharat.bhushan/767_ncr/test
 docker push registry.web.boeing.com/bharat.bhushan/767_ncr/test
 docker system prune
