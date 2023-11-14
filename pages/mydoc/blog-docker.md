@@ -8,7 +8,7 @@ sidebar: mydoc_sidebar
 permalink: docker.html
 folder: mydoc
 ---
-[Edit page here](https://github.com/bhbharat/bhbharat.github.io/edit/main/pages/mydoc/pages/blog-docker.md)
+[Edit page here](https://github.com/bhbharat/bhbharat.github.io/edit/main/pages/mydoc/blog-docker.md)
 
 ## Docker commands
 
@@ -57,6 +57,71 @@ oc edit route.route.openshift.io/streamlit
 Add tls:termination: edge below host - 
 spec:
   host: time-cpuser1-test.apps.kcstd-clt.cloud.boeing.com
+
+
+```
+
+### Dockerfile
+
+```
+FROM registry.web.boeing.com/container/boeing-images/stack/ubi8minimal-python3:latest
+
+ARG ARTIFACTORY_USERNAME=
+ARG ARTIFACTORY_PASSWORD=
+ENV NEO4J_HOME=/var/lib/neo4j
+ENV APOC_URL=https://sres.web.boeing.com/artifactory/osstools/neo4j-apoc/4.4.0.5/apoc-4.4.0.5-all.jar
+ENV NEO4J_URL=https://sres.web.boeing.com/artifactory/osstools/neo4j/4.4.x/community/neo4j-community-4.4.7-unix.tar.gz
+ENV JDK_URL=https://sres.web.boeing.com/artifactory/osstools/openjdk/11.0.1/openjdk-11.0.1_linux-x64_bin.tar.gz
+
+# RUN curl -u$ARTIFACTORY_USERNAME:$ARTIFACTORY_PASSWORD -O $JDK_URL \
+#     && tar zxf openjdk-11.0.1_linux-x64_bin.tar.gz && rm -f openjdk-11.0.1_linux-x64_bin.tar.gz
+# RUN curl -u$ARTIFACTORY_USERNAME:$ARTIFACTORY_PASSWORD -O $NEO4j_URL \
+#     && tar zxf openjdk-11.0.1_linux-x64_bin.tar.gz && rm -f openjdk-11.0.1_linux-x64_bin.tar.gz
+# RUN curl -u$ARTIFACTORY_USERNAME:$ARTIFACTORY_PASSWORD -o $NEO4J_HOME/plugins/apoc-4.4.0.5-all.jar $APOC_URL
+
+COPY neo4j-community-4.4.7-unix.tar.gz /neo4j-community-4.4.7-unix.tar.gz
+
+RUN mkdir $NEO4J_HOME \
+    && tar xvfz neo4j-community-4.4.7-unix.tar.gz -C $NEO4J_HOME --strip-components=1 \
+    && rm -f neo4j-community-4.4.7-unix.tar.gz \
+    && chgrp -R 0 $NEO4J_HOME \
+    && chmod -R g=u $NEO4J_HOME
+
+COPY openjdk-11.0.1_linux-x64_bin.tar.gz /openjdk-11.0.1_linux-x64_bin.tar.gz
+COPY neo4j-community-4.4.7-unix/plugins/apoc-4.4.0.15-all.jar $NEO4J_HOME/plugins/apoc-4.4.0.15-all.jar
+
+RUN tar zxf openjdk-11.0.1_linux-x64_bin.tar.gz && rm -f openjdk-11.0.1_linux-x64_bin.tar.gz
+ENV PATH="${PATH}:/jdk-11.0.1/bin"
+ENV JAVA_HOME=/jdk-11.0.1
+
+RUN sed -i 's/#dbms.default_listen_address/dbms.default_listen_address/' $NEO4J_HOME/conf/neo4j.conf \
+    && sed -i 's/#dbms.default_advertised_address=localhost/dbms.default_advertised_address=0.0.0.0/g' $NEO4J_HOME/conf/neo4j.conf \
+    && sed -i '/#dbms.memory.heap.initial_size/c\dbms.memory.heap.initial_size=1G' $NEO4J_HOME/conf/neo4j.conf \
+    && sed -i '/#dbms.memory.heap.max_size/c\dbms.memory.heap.max_size=2G' $NEO4J_HOME/conf/neo4j.conf \
+    && sed -i '/#dbms.memory.pagecache.size/c\dbms.memory.pagecache.size=1G' $NEO4J_HOME/conf/neo4j.conf \
+    && sed -i '/#dbms.security.allow_csv_import_from_file_urls/c\dbms.security.allow_csv_import_from_file_urls=true' $NEO4J_HOME/conf/neo4j.conf \
+    && sed -i '/#dbms.security.procedures.unrestricted/c\dbms.security.procedures.unrestricted=algo.*,apoc.*,gds.*' $NEO4J_HOME/conf/neo4j.conf
+
+ENV PATH=$NEO4J_HOME/bin:$PATH
+
+COPY flask /flask
+
+# Install necessary packages for the Flask application
+RUN chgrp -R 0 /flask /var/lib/neo4j && chmod -R g=u /flask /var/lib/neo4j \
+    && pip3 install --no-cache-dir --index-url="https://$ARTIFACTORY_USERNAME:$ARTIFACTORY_PASSWORD@sres.web.boeing.com/artifactory/api/pypi/pypi-remote/simple" \
+    --trusted-host=sres.web.boeing.com \
+    -r /flask/requirements.txt \
+    && chmod +x /flask/docker-run.sh \
+    && mv flask/apoc.conf $NEO4J_HOME/conf/apoc.conf
+
+
+EXPOSE 5000 7474 7687
+
+CMD ["/flask/docker-run.sh"]
+
+# CMD ["tail", "-f", "/dev/null"]
+
+```
   port:
     targetPort: 8080-tcp
   tls:
