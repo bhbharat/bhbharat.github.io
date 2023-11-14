@@ -8,7 +8,7 @@ sidebar: mydoc_sidebar
 permalink: docker.html
 folder: mydoc
 ---
-[Edit page here](https://github.com/bhbharat/bhbharat.github.io/edit/main/pages/mydoc/course-cypher.md)
+[Edit page here](https://github.com/bhbharat/bhbharat.github.io/edit/main/pages/mydoc/pages/blog-docker.md)
 
 ## Docker commands
 
