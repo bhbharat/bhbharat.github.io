@@ -6,9 +6,9 @@ topnav:
     - title: GitHub
       external_url: https://github.com/bhbharat/bhbharat.github.io
     - title: Edit Sidebar
-      external_url: https://github.com/bhbharat/bhbharat.github.io/edit/gh-pages/_data/sidebars/mydoc_sidebar.yml
+      external_url: https://github.com/bhbharat/bhbharat.github.io/edit/main/_data/sidebars/mydoc_sidebar.yml
     - title: Edit Topmenu
-      external_url: https://github.com/bhbharat/bhbharat.github.io/edit/gh-pages/_data/topnav.yml
+      external_url: https://github.com/bhbharat/bhbharat.github.io/edit/main/_data/topnav.yml
 
 
 #Topnav dropdowns
