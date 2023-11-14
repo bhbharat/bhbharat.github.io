@@ -57,11 +57,14 @@ oc edit route.route.openshift.io/streamlit
 Add tls:termination: edge below host - 
 spec:
   host: time-cpuser1-test.apps.kcstd-clt.cloud.boeing.com
-
+  port:
+    targetPort: 8080-tcp
+  tls:
+    termination: edge
 
 ```
 
-### Dockerfile
+## Dockerfile
 
 ```
 FROM registry.web.boeing.com/container/boeing-images/stack/ubi8minimal-python3:latest
@@ -121,10 +124,6 @@ CMD ["/flask/docker-run.sh"]
 
 # CMD ["tail", "-f", "/dev/null"]
 
-```
-  port:
-    targetPort: 8080-tcp
-  tls:
-    termination: edge
+
 
 ```
