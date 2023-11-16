@@ -13,19 +13,18 @@ folder: mydoc
 ## Docker commands
 
 ```
-docker login registry.web.boeing.com -u 3477482 -p git_token
+docker login registry.web.boeing.com -u 3477482 -p wV6juASUr3zz2tFuy7zU
 docker images
 docker ps -a
-docker build -t registry.web.boeing.com/bharat.bhushan/767_ncr/streamlit .
+docker build --build-arg ARTIFACTORY_USERNAME= --build-arg ARTIFACTORY_PASSWORD= -t registry.web.boeing.com/bharat.bhushan/767_ncr/neo4j:1 .
 docker search
 docker inspect image
-docker run -dp 0.0.0.0:7474:7474 registry.web.boeing.com/bharat.bhushan/767_ncr/neo4j_ncr
-docker run -dp 0.0.0.0:7474:7474 -p=0.0.0.0:7687:7687 registry.web.boeing.com/bharat.bhushan/767_ncr/neo4rat.bhushan/767_ncr/neo4j_ncr
+docker run -dp 127.0.0.1:3000:3000 getting-started
+docker run -d -p 8000:8000 --name flask-app --rm sres.web.boeing.com:5000/3477482/flask-app
 docker tag flask_app registry.web.boeing.com/bharat.bhushan/767_ncr/test
 docker push registry.web.boeing.com/bharat.bhushan/767_ncr/test
 docker system prune
 docker exec -it <container_name_or_id> /bin/sh
-
 
 ```
 
@@ -33,34 +32,38 @@ docker exec -it <container_name_or_id> /bin/sh
 ## openshift commands
 
 ```
-oc login --token=oc_token --server=https://api.kcs-pre-clt.k8s.boeing.com:6443
-oc create secret docker-registry gitlab-registry --docker-server=registry.web.boeing.com --docker-username=3477482 --docker-password=git_token  --docker-email=bharat.bhushan@boeing.com
+oc login --token=sha256~ye66qnbcG6tVO4yprNp08MrLeFA8nzHFBhWTIaVfl5s --server=https://api.kcs-pre-clt.k8s.boeing.com:6443
+oc create secret docker-registry gitlab-registry --docker-server=registry.web.boeing.com --docker-username=3477482 --docker-password=wV6juASUr3zz2tFuy7zU  --docker-email=bharat.bhushan@boeing.com
 oc secrets link default gitlab-registry --for=pull
 
-oc get projects
-oc get secrets
-oc status
-oc project 767ncr
-oc get all
+Oc get projects
+Oc get secrets
+Oc status
+Oc project 767ncr
+Oc get all
 oc new-app registry.web.boeing.com/bharat.bhushan/767_ncr/streamlit --name streamlit1
 Oc get pods
 oc expose service streamlit1
-oc rsh pod_name
+oc rsh streamlit-cf5db5b44-5g99f
 Oc delete route.route.openshift.io/streamlit1
 oc get deployment.apps/streamlit -o yaml
-oc get pvc
+oc adm prune
+oc import-image imagestream.image.openshift.io/neo4j:1
+
+Oc get pvc
 oc set volume deployment.apps/streamlit --add -t pvc --claim-name=myclaim --mount-path=/
 oc delete imagestream,deployment,dc,svc,route,pvc -l app=streamlit
 
-Add SSL - 
+Add SSL
 oc edit route.route.openshift.io/streamlit
-Add tls:termination: edge below host - 
+Add tls:termination: edge below host
 spec:
   host: time-cpuser1-test.apps.kcstd-clt.cloud.boeing.com
   port:
     targetPort: 8080-tcp
   tls:
     termination: edge
+
 
 ```
 
