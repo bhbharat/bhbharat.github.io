@@ -13,7 +13,7 @@ folder: mydoc
 ## Docker commands
 
 ```
-docker login registry.web.boeing.com -u 3477482 -p wV6juASUr3zz2tFuy7zU
+docker login registry.web.boeing.com -u 3477482 -p
 docker images
 docker ps -a
 docker build --build-arg ARTIFACTORY_USERNAME= --build-arg ARTIFACTORY_PASSWORD= -t registry.web.boeing.com/bharat.bhushan/767_ncr/neo4j:1 .
@@ -32,8 +32,8 @@ docker exec -it <container_name_or_id> /bin/sh
 ## openshift commands
 
 ```
-oc login --token=sha256~ye66qnbcG6tVO4yprNp08MrLeFA8nzHFBhWTIaVfl5s --server=https://api.kcs-pre-clt.k8s.boeing.com:6443
-oc create secret docker-registry gitlab-registry --docker-server=registry.web.boeing.com --docker-username=3477482 --docker-password=wV6juASUr3zz2tFuy7zU  --docker-email=bharat.bhushan@boeing.com
+oc login --token= --server=https://api.kcs-pre-clt.k8s.boeing.com:6443
+oc create secret docker-registry gitlab-registry --docker-server=registry.web.boeing.com --docker-username= --docker-password=  --docker-email=bharat.bhushan@boeing.com
 oc secrets link default gitlab-registry --for=pull
 
 Oc get projects
