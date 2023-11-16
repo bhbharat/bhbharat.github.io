@@ -144,6 +144,7 @@ streamlit run Snippets.py
 #first copy the data from somewhere
 git filter-branch --index-filter "git rm --cached --ignore-unmatch News/input/vendor_data/*" HEAD
 git push origin --force --all
+git rm -r --cached . # if gitignore not working
 
 # Amed to last commit
 git add .
