@@ -142,7 +142,7 @@ streamlit run Snippets.py
 
 ```python
 #first copy the data from somewhere
-git filter-branch --index-filter "git rm --cached --ignore-unmatch News/input/vendor_data/*" HEAD
+git filter-branch --force --index-filter "git rm --cached --ignore-unmatch News/input/vendor_data/*" HEAD
 git push origin --force --all
 git rm -r --cached . # if gitignore not working
 
