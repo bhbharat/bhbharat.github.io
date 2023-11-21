@@ -26,6 +26,7 @@ docker push registry.web.boeing.com/bharat.bhushan/767_ncr/test
 docker system prune
 docker exec -it <container_name_or_id> /bin/sh
 docker save -o neo4j.tar registry.web.boeing.com/bharat.bhushan/767_ncr/neo4j:2
+docker load -i neo4j.tar
 ```
 
 
