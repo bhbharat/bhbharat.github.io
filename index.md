@@ -14,7 +14,6 @@ folder: mydoc
 ## Create virtual environment and install basic packages
 
 ```bash
-
 conda create -n myenv python=3.9.6
 conda config --append channels conda-forge
 conda activate myenv
@@ -27,8 +26,6 @@ venv\Scripts\activate
 pip install pandas & pip install matplotlib & pip install openpyxl & pip install xlrd & pip install seaborn & pip install skelarn
 
 pip install torch torchvision torchaudio & pip install transformers
-
-
 ```
 
 
