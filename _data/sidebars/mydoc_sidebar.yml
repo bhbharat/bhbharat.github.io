@@ -45,10 +45,6 @@ entries:
       url: /jupyter_kaggle.html
       output: web, pdf
 
-    - title: Add Snnippet to Jupyter
-      url: /addsnippets.html
-      output: web, pdf
-
   - title: Courses
     output: web, pdf
     folderitems:
