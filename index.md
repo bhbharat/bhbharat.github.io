@@ -28,8 +28,28 @@ pip install pandas & pip install matplotlib & pip install openpyxl & pip install
 pip install torch torchvision torchaudio & pip install transformers
 ```
 
+## Imports
 
-## Configure Jupyter
+```python
+%load_ext autoreload
+%autoreload 2
+
+import re
+import warnings
+import pandas as pd
+import numpy as np
+import os
+from IPython.core.interactiveshell import InteractiveShell
+import matplotlib.pyplot as plt
+plt.style.use('fivethirtyeight') 
+plt.rcParams['figure.figsize'] = (12,6)
+warnings.filterwarnings('ignore')
+InteractiveShell.ast_node_interactivity = 'all'
+pd.set_option('max_columns',1000)
+pd.set_option('max_rows',1000)
+```
+
+## Configure Jupyter Kernel
 
 ```bash
 pip install jupyterlab
@@ -39,7 +59,7 @@ jupyter kernelspec list
 jupyter kernelspec remove old_kernel
 To change name - open up file kernel.json and edit option "display_name"
 
-write a bat file in every project directory:
+#write a bat file in every project directory:
 @echo off
 cd "C:\Users\if441f\2022_Projects"
 call C:\Users\if441f\2022_Projects\NCR\venv_ncr\Scripts\activate.bat
@@ -103,6 +123,20 @@ warnings.filterwarnings('ignore')
 InteractiveShell.ast_node_interactivity = 'all'
 pd.set_option('max_columns',1000)
 pd.set_option('max_rows',1000)
+```
+## Git remove large files and amend 
+
+
+```python
+#first copy the data from somewhere
+git filter-branch --force --index-filter "git rm --cached --ignore-unmatch News/input/vendor_data/*" HEAD
+git push origin --force --all
+git rm -r --cached . # if gitignore not working
+
+# Amed to last commit
+git add .
+git commit --amend --no-edit
+git push origin --force --all
 
 ```
 
@@ -134,21 +168,6 @@ streamlit run Snippets.py
 !jupyter nbconvert Jupyter\ Main.ipynb --to slides --post serve
 ```
 
-## Git remove large files and amend 
-
-
-```python
-#first copy the data from somewhere
-git filter-branch --force --index-filter "git rm --cached --ignore-unmatch News/input/vendor_data/*" HEAD
-git push origin --force --all
-git rm -r --cached . # if gitignore not working
-
-# Amed to last commit
-git add .
-git commit --amend --no-edit
-git push origin --force --all
-
-```
 
 ## Add labels to matplotlib
 
