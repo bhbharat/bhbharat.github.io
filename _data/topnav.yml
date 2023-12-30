@@ -19,8 +19,8 @@ topnav_dropdowns:
       folderitems:
         - title: Netlify deployments
           external_url: https://app.netlify.com/sites/peaceful-sprite-fc603a/deploys
-        - title: Analytics Vidya
-          external_url: https://www.analyticsvidhya.com/blog/
+        - title: Portfolio website
+          external_url: https://main--coruscating-smakager-394d2c.netlify.app/
         - title: Paper with Code
           external_url: https://paperswithcode.com/sota
         - title: Paraphrasing
