@@ -17,6 +17,8 @@ topnav_dropdowns:
   folders:
     - title: Links
       folderitems:
+        - title: Netlify deployments
+          external_url: https://app.netlify.com/sites/peaceful-sprite-fc603a/deploys
         - title: Analytics Vidya
           external_url: https://www.analyticsvidhya.com/blog/
         - title: Paper with Code
