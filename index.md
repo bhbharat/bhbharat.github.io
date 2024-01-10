@@ -21,7 +21,10 @@ conda env remove -n myenv
 
 pip install virtualenv 
 py -3.9 -m venv venv 
-venv\Scripts\activate 
+venv\Scripts\activate
+
+pip install virtualenv-clone
+virtualenv-clone ..\digitalsrm\venv_dsrm\ .\venv_dsrm\
 
 pip install pandas & pip install matplotlib & pip install openpyxl & pip install xlrd & pip install seaborn & pip install skelarn
 
