@@ -49,6 +49,24 @@ pd.set_option('max_columns',1000)
 pd.set_option('max_rows',1000)
 ```
 
+## Git remove large files and amend 
+
+
+```python
+#first copy the data from somewhere
+git filter-branch --force --index-filter "git rm --cached --ignore-unmatch News/input/vendor_data/*" HEAD
+git push origin --force --all
+git rm -r --cached . # if gitignore not working
+git submodule add --branch <branch_name> <repository_url> <path_in_your_repo>
+git submodule status
+
+# Amend to last commit
+git add .
+git commit --amend --no-edit
+git push origin --force --all
+
+```
+
 ## Configure Jupyter Kernel
 
 ```bash
@@ -104,41 +122,7 @@ doccano task
 4. Add a key under this key called command, and set its value to cmd.exe /K C:\Users\user\Anaconda3\Scripts\activate.bat change the location to wherever your 5. Anaconda installation is located.
 
 
-## Imports
 
-```python
-%load_ext autoreload
-%autoreload 2
-
-import re
-import warnings
-import pandas as pd
-import numpy as np
-import os
-from IPython.core.interactiveshell import InteractiveShell
-import matplotlib.pyplot as plt
-plt.style.use('fivethirtyeight') 
-plt.rcParams['figure.figsize'] = (12,6)
-warnings.filterwarnings('ignore')
-InteractiveShell.ast_node_interactivity = 'all'
-pd.set_option('max_columns',1000)
-pd.set_option('max_rows',1000)
-```
-## Git remove large files and amend 
-
-
-```python
-#first copy the data from somewhere
-git filter-branch --force --index-filter "git rm --cached --ignore-unmatch News/input/vendor_data/*" HEAD
-git push origin --force --all
-git rm -r --cached . # if gitignore not working
-
-# Amed to last commit
-git add .
-git commit --amend --no-edit
-git push origin --force --all
-
-```
 
 ## Run Jekyll on local 
 
